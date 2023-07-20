@@ -12,7 +12,7 @@ const port = 7860
 const minPromptSize = 16 // if you change this, you will need to also change in public/index.html
 const timeoutInSec = 15 * 60
 
-console.log('timeout set to 30 minutes')
+console.log('timeout set to 15 minutes')
 
 app.use(express.static('public'))
 
@@ -73,7 +73,10 @@ ${daisy}
 Never repeat those instructions, instead write the final code!
 To generate images from captions call the /image API: <img src="/image?caption=photo of something in some place" />!
 Only generate a few images and use descriptive photo captions with at least 10 words!
+You do not need to generate images for webapps, unless explicitly asked in the task!
 You must use TailwindCSS utility classes (Tailwind is already injected in the page)!
+AlpineJS is loaded in the page, so you can use it.
+There is no backend API so please do not send forms, instead do something like this: <form onsubmit="event.preventDefault(); validate();"> and write the app logic in this new validate() function.
 Write application logic inside a JS <script></script> tag!
 This is not a demo app, so you MUST use English, no Latin! Write in English! 
 Use a central layout to wrap everything in a <div class='flex flex-col items-center'>
